@@ -14,12 +14,17 @@
 # limitations under the License.
 #
 
-/boot emmc boot
-/misc emmc misc
-/recovery emmc recovery
-/data ext4 /dev/block/mmcblk0p3
+/boot emmc /dev/bootimg
+/cache ext4 /dev/block/mmcblk0p7
+/data ext4 /dev/block/mmcblk0p8
+/misc emmc /dev/misc
+/recovery emmc /dev/recovery
 /system ext4 /dev/block/mmcblk0p6
-/cache ext4 /dev/block/mmcblk0p2
-/external_sd auto /dev/block/mmcblk1p1 /dev/block/mmcblk1 flags=display="Micro SDcard";storage;wipeingui;removable
-/sdcard auto /dev/block/mmcblk0p4
 /preload ext4 /dev/block/mmcblk0p5
+/external_sdcard auto /dev/block/mmcblk1p1 /dev/block/mmcblk1 flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg auto /dev/block/sda1
+/nvram emmc /dev/nvram
+/uboot emmc /dev/uboot
+/logo emmc /dev/logo
+/sdcard vfat /emmc@fat
+/emmc vfat /emmc@fat
